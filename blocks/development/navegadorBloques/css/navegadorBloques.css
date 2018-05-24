@@ -1,0 +1,45 @@
+#divNavegador{
+    display:none;
+    border:1px #CCCCCC dotted;
+    padding:10px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
+UL.navegadorBloques {
+	font-family: Verdana, sans-serif;
+	font-size: 15px;
+	line-height: 18px;
+	padding: 0px;
+	margin: 0px;
+        
+}
+
+UL.navegadorBloques LI {
+	list-style: none;
+	padding: 0px;
+	padding-left: 20px;
+	margin: 0px;
+	white-space: nowrap;
+}
+
+
+.navegadorBloques LI.paquete { 
+    background: url(images/directory.png) left top no-repeat; 
+}
+.navegadorBloques LI.bloque { 
+    background: url(images/zip.png) left top no-repeat; 
+}
+
+.listaBloques{
+    
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.listaBloques li{
+    float:left;
+    padding:10px;
+}
+

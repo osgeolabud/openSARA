@@ -1,0 +1,49 @@
+
+/*-------------------------Pie----------------------------------*/
+
+.pie{
+	
+	width:95%;
+	background-color:#EEEEEE;
+	font-size: 12px;
+    font-family: "Arial", Verdana, Trebuchet MS, Helvetica, sans-serif;
+    position:absolute;
+    color:#555555;
+	
+	
+}
+.pieEncabezado{
+	
+	
+    font-weight: bold;
+    
+	
+}
+
+.seccionIzquierda{
+	
+	width:10%;
+	float:left;
+	padding:2em;
+	
+	
+}
+
+.seccionDerecha{
+	
+	padding:2em;
+	float:left;
+	
+}
+
+.pieDivision{
+	width:1px;
+	float:left;
+	
+}
+
+a { 
+	color: inherit;
+	text-decoration: none; 
+	
+} 

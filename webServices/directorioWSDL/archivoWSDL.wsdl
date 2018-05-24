@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost/directorioWsdl/archivoWSDL/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="archivoWSDL" targetNamespace="http://localhost/directorioWsdl/archivoWSDL/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://localhost/hipnos/webServices/directorioWSDL/archivoWSDL/">
+      <xsd:element name="NewOperation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="datos" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost/directorioWsdl/archivoWSDL/"><xsd:element name="consultarInformacionBeneficiario" type="xsd:string"></xsd:element></xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="informacionBeneficiarioRequest">
+    <wsdl:part element="tns:consultarInformacionBeneficiario" name="identificacion"/>
+  </wsdl:message>
+  <wsdl:message name="informacionBeneficiarioResponse">
+    <wsdl:part element="tns:informacionBeneficiarioResponse" name="datosBeneficiario"/>
+  </wsdl:message>
+  <wsdl:portType name="archivoWSDL">
+    <wsdl:operation name="informacionBeneficiario">
+      <wsdl:input message="tns:informacionBeneficiarioRequest"/>
+      <wsdl:output message="tns:informacionBeneficiarioResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="archivoWSDLSOAP" type="tns:archivoWSDL">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="informacionBeneficiario">
+      <soap:operation soapAction="http://localhost/hipnos/webServices/directorioWSDL/archivoWSDL/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="archivoWSDL">
+    <wsdl:port binding="tns:archivoWSDLSOAP" name="archivoWSDLSOAP">
+      <soap:address location="http://localhost/hipnos/index.php?webservices=bjBvR3NRosxSC4SLLp11HpLtNI2n5sDSl_fUcm3tEudNH5e_gwLRqJ6rJzLUfAEXUPnHYFa3iFm3JQ34MKzQiw"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

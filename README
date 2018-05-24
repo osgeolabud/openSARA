@@ -1,0 +1,37 @@
+                              _________   _____ __________    _____   
+  ____ ______   ____   ____  /   _____/  /  _  \\______   \  /  _  \  
+ /  _ \\____ \_/ __ \ /    \ \_____  \  /  /_\  \|       _/ /  /_\  \ 
+(  <_> )  |_> >  ___/|   |  \/        \/    |    \    |   \/    |    \
+ \____/|   __/ \___  >___|  /_______  /\____|__  /____|_  /\____|__  /
+       |__|        \/     \/        \/         \/       \/         \/ 
+
+		    	FRAMEWORK
+-------------------------------------------------------------------------------------
+OSGeoLabUD 2016 - 2018
+
+Marco de desarrollo experimental escrito en lenguaje PHP.
+
+Descripción
+-----------------
+
+openSARA, Sistema para la Articulación Rápida de Aplicaciones (System for Addressing the Rapid development of Applications),
+es un marco de trabajo para el desarrollo de aplicaciones orientadas a la web.
+
+Está escrito en lenguaje PHP y propende por una arquitectura dividida en capas.
+
+Instalación
+-----------------
+openSARA requiere para su funcionamiento un servidor web, preferiblemente Apache HTTP (con soporte para PHP), un motor de bases de datos - 
+soporta PostgreSQL, MySQL, Oracle o cualquier otra a través de PDO (PHP Data Objects).
+
+Aspectos de seguridad
+-----------------------------------
+Se recomienda que el acceso a las carpetas de openSARA sea deshabilitado desde la configuración del servidor web.
+
+Derechos de Autor
+------------------
+openSARA is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either
+version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
