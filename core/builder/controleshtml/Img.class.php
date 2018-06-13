@@ -37,21 +37,14 @@ class Img extends HtmlBase{
         if (isset ( $atributos ["borde"] )) {
             $this->cadenaHTML .= "border='" . $atributos ["borde"] . "' ";
         } 
-        if (isset ( $atributos [self::ANCHO] )) {
-            if ($atributos [self::ANCHO] != "") {
-                $this->cadenaHTML .= "width='" . $atributos [self::ANCHO] . "' ";
-            }
-        } else {
-            $this->cadenaHTML .= "width='200px' ";
+        if (isset ( $atributos [self::ANCHO] ) && $atributos [self::ANCHO] != "") {
+                $this->cadenaHTML .= "width='" . $atributos [self::ANCHO] . "' ";                
         }
     
-        if (isset ( $atributos ["alto"] )) {
-            if ($atributos ["alto"] != "") {
+        if (isset ( $atributos ["alto"] )  && $atributos ["alto"] != "") {
                 $this->cadenaHTML .= "height='" . $atributos [self::ALTO] . "' ";
-            }
-        } else {
-            $this->cadenaHTML .= "height='200px' ";
         }
+        
         $this->cadenaHTML .= " />";
         $this->cadenaHTML .= "</div>\n";
         $this->cadenaHTML .= "</div>\n";

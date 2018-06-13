@@ -185,18 +185,16 @@ class ArmadorPagina {
 		foreach ( $unBloque as $clave => $valor ) {
 			$unBloque [$clave] = trim ( $valor );
 		}
-		
-		if (! isset ( $_REQUEST ['actionBloque'] ) || (isset ( $_REQUEST ['actionBloque'] ) && $unBloque [self::NOMBRE] != $_REQUEST ['actionBloque'])) {
+                if (! isset ( $_REQUEST ['actionBloque'] ) || (isset ( $_REQUEST ['actionBloque'] ) && $unBloque [self::NOMBRE] != $_REQUEST ['actionBloque'])) {
 			if ($unBloque [self::GRUPO] == '') {
 				$archivo = $this->raizDocumentos . self::CARPETABLOQUES . $unBloque [self::NOMBRE] . self::ARCHIVOBLOQUE;
 			} else {
 				$archivo = $this->raizDocumentos . self::CARPETABLOQUES . $unBloque [self::GRUPO] . "/" . $unBloque [self::NOMBRE] . self::ARCHIVOBLOQUE;
 			}
-			include ($archivo);
+                        include ($archivo);			
+                        
 			
-			return true;
 		} else {
-			
 			$carpeta = '';
 			if (isset ( $_REQUEST [self::BLOQUEGRUPO] ) && $_REQUEST [self::BLOQUEGRUPO] != "") {
 				$carpeta = $_REQUEST [self::BLOQUEGRUPO] . '/';
@@ -206,13 +204,25 @@ class ArmadorPagina {
 				$unBloque [self::NOMBRE] = $_REQUEST ['actionBloque'];
 				$_REQUEST ['action'] = $_REQUEST ['actionBloque'];
 				$unBloque ["id_bloque"] = $_REQUEST ["bloque"];
+                                $this->miConfigurador->setVariableConfiguracion ( "esteBloque", $unBloque );
 				include_once ($this->raizDocumentos . self::CARPETABLOQUES . $carpeta . $unBloque [self::NOMBRE] . self::ARCHIVOBLOQUE);
 				unset ( $_REQUEST ['action'] );
 			} elseif (isset ( $_REQUEST ["procesarAjax"] )) {				
-			
-                            include_once ($this->raizDocumentos . self::CARPETABLOQUES . $carpeta . $_REQUEST ["bloqueNombre"] . self::ARCHIVOBLOQUE);
+                            $unBloque ["nombre"] = $_REQUEST ["bloqueNombre"];
+                            $unBloque ["grupo"] = $_REQUEST ["bloqueGrupo"];    
+                            $this->miConfigurador->setVariableConfiguracion ( "esteBloque", $unBloque );
+                            include_once ($this->raizDocumentos . self::CARPETABLOQUES . $carpeta . $unBloque [self::NOMBRE] . self::ARCHIVOBLOQUE);
 			}
+                        
+                        
+                      
+
 		}
+                
+                if (isset ( $lenguaje )) {
+                    $unBloque['lenguaje']= $lenguaje;
+                }
+                
 	}
 	private function incluirEstilosBloque($unBloque) {
 		foreach ( $unBloque as $clave => $valor ) {

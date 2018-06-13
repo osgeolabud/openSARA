@@ -3,7 +3,6 @@
 interface Bloque {
     
     function bloque();
-
 }
 
 ?>
