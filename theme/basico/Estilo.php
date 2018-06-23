@@ -28,7 +28,7 @@ if (isset ( $_REQUEST ['bootstrap'] )) {
 			$estilo [$indice] = 'scripts/bootstrap/bootstrap-'. $boostrap[0] .'-dist/css/bootstrap.min.css';
 		}
 	} else {
-		$estilo [$indice] = 'scripts/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css';
+		$estilo [$indice] = 'scripts/bootstrap/latest/css/bootstrap.min.css';
 	}
 	$plugin [$indice] = true; //El css está en la carpeta plugin
 	$indice ++;

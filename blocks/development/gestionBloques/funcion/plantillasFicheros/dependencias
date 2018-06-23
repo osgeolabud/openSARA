@@ -1,0 +1,28 @@
+<?php
+
+if (!isset($GLOBALS ["autorizado"])) {
+    include ("../index.php");
+    exit();
+}
+
+//Core
+include_once ("core/manager/Configurador.class.php");
+
+// Templates
+include_once ("core/builder/blockTemplate/TBloque.class.php");
+include_once ("core/builder/blockTemplate/TLenguaje.class.php");
+include_once ("core/builder/blockTemplate/TFrontera.class.php");
+
+// Frontera
+require_once ("Frontera/Frontera.class.php");
+
+// Entidad
+require_once ("Entidad/Entidad.class.php");
+
+// Compilación de clausulas SQL utilizadas por el bloque
+require_once ("Control/Sql.class.php");
+
+// Locale
+require_once ("Frontera/Lenguaje.class.php");
+
+?>

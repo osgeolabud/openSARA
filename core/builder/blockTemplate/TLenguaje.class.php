@@ -25,7 +25,7 @@ abstract class TLenguaje {
             $idioma = "es_es";
         }
 
-        include ($this->ruta . "locale/" . $idioma . "/Mensaje.php");
+        include ($this->ruta . "Frontera/locale/" . $idioma . "/Mensaje.php");
     }
 
     public function getCadena($opcion = "") {

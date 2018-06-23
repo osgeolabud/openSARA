@@ -58,7 +58,7 @@ include_once ("core/builder/FormularioHtml.class.php");
                 
                 // Para la entidad
                 $this->miFuncion->setSql ( $this->miSql );
-                $this->miFuncion->setFuncion ( $this->miFuncion );
+                $this->miFuncion->setEntidad ( $this->miFuncion );
                 $this->miFuncion->setLenguaje ( $this->miLenguaje );
                 
                 if (! isset ( $_REQUEST ['action'] )) {

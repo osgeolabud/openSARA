@@ -37,7 +37,7 @@ if (isset ( $_REQUEST ['bootstrap'] )) {
 			$funcion [$indice] = 'bootstrap/bootstrap-'. $boostrap[0] .'-dist/js/bootstrap.min.js';
 		}		
 	} else {
-		$funcion [$indice] = 'bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js';
+		$funcion [$indice] = 'bootstrap/latest/js/bootstrap.min.js';
 	}
 	$indice ++;	
 }

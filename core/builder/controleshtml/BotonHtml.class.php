@@ -19,7 +19,6 @@ require_once ("core/builder/controleshtml/Input.class.php");
  * 
  * 
  */
-
 class BotonHtml extends HtmlBase {
 
     /**
@@ -89,7 +88,9 @@ class BotonHtml extends HtmlBase {
         //Atributos del Botón
         $cadena .= $this->atributosGeneralesBoton();
         $cadena .= $this->atributoTipoSubmit();
+        if (isset($this->atributos [self::VALOR])) {
         $cadena .= ">" . $this->atributos [self::VALOR] . "</button>\n";
+        }
         return $cadena;
     }
 
@@ -114,11 +115,11 @@ class BotonHtml extends HtmlBase {
         //Estilos
         $cadena .= "class='" . $this->atributos [self::ESTILOBOTON] . "' ";
 
-        //Etiqueta del Botón
-        $cadena .= self::HTMLVALUE . "'" . $this->atributos [self::VALOR] . "' ";
-
+       
         //Índice Tabulador
-        $cadena .= self::HTMLTABINDEX . "'" . $this->atributos [self::TABINDEX] . "' ";
+        if (isset($this->atributos [self::TABINDEX])) {
+            $cadena .= self::HTMLTABINDEX . "'" . $this->atributos [self::TABINDEX] . "' ";
+        }
 
 
         if (isset($this->atributos ['submit']) && $this->atributos ['submit']) {
@@ -136,6 +137,13 @@ class BotonHtml extends HtmlBase {
             $cadena .= "style='" . $this->atributos [self::ESTILOENLINEA] . "' ";
         }
 
+        if (isset($this->atributos ['atributos'])) {
+
+            foreach ($this->atributos['atributos'] as $clave => $valor) {
+                $cadena .= $clave . "='" . $valor . "' ";
+            }
+        }
+
         return $cadena;
     }
 
@@ -150,15 +158,15 @@ class BotonHtml extends HtmlBase {
     }
 
     function atributoTipoSubmit() {
-        
+
         if (!isset($this->atributos [self::TIPOSUBMIT])) {
-            
+
             /**
              * Si el atributo no está declarado entonces los eventos del botón deben ser procesados por funciones definidas en ready,js
              */
             return '';
         }
-        
+
 
 
         /**
@@ -182,7 +190,7 @@ class BotonHtml extends HtmlBase {
 
 
             if (!isset($this->atributos ["cancelar"]) && (isset($this->atributos [self::VERIFICARFORMULARIO]) && $this->atributos [self::VERIFICARFORMULARIO] != "")) {
-                
+
                 $cadena .= "onclick=\"if(" . $this->atributos [self::VERIFICARFORMULARIO] . "){document.forms['" . $this->atributos [self::NOMBREFORMULARIO] . $cadenaHtml[0] . $this->atributos [self::ID] . "'].value= 'true';";
 
                 if ($this->atributos [self::TIPOSUBMIT] == "jquery") {
